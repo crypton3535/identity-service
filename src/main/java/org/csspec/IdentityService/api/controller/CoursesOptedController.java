@@ -26,7 +26,7 @@ public class CoursesOptedController {
     // stores the courses opted by a student , one at a time.
     @RequestMapping(value = "/users/student/course", method = RequestMethod.POST)
     public ResponseEntity<?> storeCourses(@RequestBody CoursesOpted coursesOpted) {
-        if(coursesOpted.getCourseId()==null || coursesOpted.getStudentId()==null || coursesOpted.getTeacherId()==null) {
+        if (coursesOpted.getCourseId() == null || coursesOpted.getStudentId() == null || coursesOpted.getTeacherId() == null) {
             return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
         }
         coursesOptedRepository.save(coursesOpted);
@@ -35,7 +35,7 @@ public class CoursesOptedController {
 
     //returns the string array of all courses opted by a student.
     @RequestMapping(value = "/courses/students/{userId}", method = RequestMethod.GET)
-    public List<Map<String,String>> getAllCourses(@PathVariable String userId) {
+    public List<Map<String, String>> getAllCourses(@PathVariable String userId) {
         return coursesOptedRepository.findAllCourses(userId);
     }
 
