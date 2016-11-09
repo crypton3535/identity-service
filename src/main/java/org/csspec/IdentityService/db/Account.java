@@ -6,7 +6,9 @@ public class Account {
     private String role;
     private String email;
 
-    public Account() {}
+    public Account() {
+        this.userid =  this.username = this.role = this.email = null;
+    }
     public Account(String userid, String username, String role, String email) {
         this.userid = userid;
         this.username = username;

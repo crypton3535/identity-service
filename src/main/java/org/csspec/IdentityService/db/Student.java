@@ -1,6 +1,5 @@
 package org.csspec.IdentityService.db;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
@@ -29,13 +28,14 @@ public class Student {
     @JsonProperty("grades")
     private List<SingleGrade> grades = new ArrayList<SingleGrade>();
 
-    public Student() {}
+    public Student() {
+    }
 
     public String getUserId() {
         return this.userId;
     }
 
-    public void setUserId( String userId ) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
@@ -43,7 +43,7 @@ public class Student {
         return this.currentCGPA;
     }
 
-    public void setCurrentGPA( double currentGPA ) {
+    public void setCurrentGPA(double currentGPA) {
         this.currentCGPA = currentGPA;
     }
 
