@@ -4,10 +4,11 @@ import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.csspec.IdentityService.db.Account;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.web.client.RestTemplate;
-import org.csspec.IdentityService.Exceptions.InvalidHeaderException;
 
-import javax.servlet.http.Cookie;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class RequestValidator {
     static public final String uri = "http://139.59.36.12:8090/oauth/check_token";
@@ -18,9 +19,9 @@ public class RequestValidator {
     private static final String SECRET = "secret";
     private static final String CLIENT = "feedback";
 
-    public static Set<String> makeSet(String ...args) {
+    public static Set<String> makeSet(String... args) {
         Set<String> temp = new HashSet<>();
-        for(int i = 0;i<args.length;i++) {
+        for (int i = 0; i < args.length; i++) {
             temp.add(args[i]);
         }
         return temp;
@@ -36,7 +37,8 @@ public class RequestValidator {
         return template.postForObject(RequestValidator.uri, null, Account.class);
     }
 
-    public static Account checkHeader(HttpServletRequest request,String... args) {
+    public static Account checkHeader(HttpServletRequest request, String... args) {
+
       /*  Cookie[] cookies = request.getCookies();
         if (cookies == null)
             return null;
@@ -60,7 +62,7 @@ public class RequestValidator {
             System.out.println("Unable to verify token: " + e.toString());
             return null;
       ///  }*/
-    Set<String> role = makeSet(args);
+   /* Set<String> role = makeSet(args);
         String header = request.getHeader("Authorization");
         if(header.startsWith("Bearer")) {
             System.out.println(header.substring(7, header.length()));
@@ -70,7 +72,7 @@ public class RequestValidator {
             } else {
                 return new Account();
             }
-        }
+        }*/
         return new Account();
     }
 

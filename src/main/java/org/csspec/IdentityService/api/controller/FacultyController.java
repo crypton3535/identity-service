@@ -19,8 +19,8 @@ public class FacultyController {
 
     @RequestMapping(value = "/identity/faculty", method = RequestMethod.POST)
     public ResponseEntity<?> addOneFaculty(@RequestBody Faculty faculty, HttpServletRequest request) {
-        RequestValidator.checkHeader(request,"ADMIN","FACULTY");
-        if(faculty.getFacultyId() == null || faculty.getUserID() ==null) {
+        RequestValidator.checkHeader(request, "ADMIN", "FACULTY");
+        if (faculty.getFacultyId() == null || faculty.getUserID() == null) {
             return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
         }
         facultyRepository.save(faculty);

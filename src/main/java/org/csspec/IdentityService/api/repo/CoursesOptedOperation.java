@@ -7,7 +7,9 @@ import java.util.List;
 import java.util.Map;
 
 public interface CoursesOptedOperation {
-   List<Map<String,String>> findAllCourses(String userId);
-   List<Course> findCoursesOfFaculty(String facultyId);
-   List<User> findTeachersOfCourse(String courseId);
+    List<Map<String, String>> findAllCourses(String userId);
+
+    List<Course> findCoursesOfFaculty(String facultyId);
+
+    List<User> findTeachersOfCourse(String courseId);
 }

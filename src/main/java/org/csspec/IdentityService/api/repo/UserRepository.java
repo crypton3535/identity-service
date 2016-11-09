@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.repository.Query;
 import java.util.List;
 
 
-public interface UserRepository extends MongoRepository<User,String>, UserOperations {
+public interface UserRepository extends MongoRepository<User, String>, UserOperations {
     public User findUserByUserId(String userId);
 
     @Query("{'isStudent' : 1 }")

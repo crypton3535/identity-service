@@ -9,7 +9,8 @@ public class Parent {
     @JsonProperty("motherName")
     private String motherName;
 
-    Parent() {}
+    Parent() {
+    }
 
     public void setFatherName(String fatherName) {
         this.fatherName = fatherName;

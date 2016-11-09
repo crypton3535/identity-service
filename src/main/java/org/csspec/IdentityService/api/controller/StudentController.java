@@ -4,7 +4,6 @@ import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.csspec.IdentityService.api.repo.StudentRepository;
 import org.csspec.IdentityService.config.RequestValidator;
 import org.csspec.IdentityService.db.Student;
-import org.jsoup.Connection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,8 +19,8 @@ public class StudentController {
 
     @RequestMapping(value = "/identity/student", method = RequestMethod.POST)
     public ResponseEntity<?> addOneStudent(@RequestBody Student student, HttpServletRequest request) {
-        RequestValidator.checkHeader(request,"ADMIN","FACULTY");
-        if(student.getUserId() == null || student.getStudentId()==null) {
+        RequestValidator.checkHeader(request, "ADMIN", "FACULTY");
+        if (student.getUserId() == null || student.getStudentId() == null) {
             return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
         }
         studentRepository.save(student);

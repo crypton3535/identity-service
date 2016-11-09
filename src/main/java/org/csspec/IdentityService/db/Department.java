@@ -44,7 +44,7 @@ public class Department {
     }
 
     public String toString() {
-        return " [ departmentId : "+departmentId+", departmentName : "+departmentName+", departmentDescription : "+departmentDescription+" ] ";
+        return " [ departmentId : " + departmentId + ", departmentName : " + departmentName + ", departmentDescription : " + departmentDescription + " ] ";
     }
 
     public void setDepartmentDescription(String departmentDescription) {

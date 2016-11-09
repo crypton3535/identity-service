@@ -7,12 +7,13 @@ import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 @Configuration
-@EnableMongoRepositories(basePackages= "org.csspec.IdentityService", repositoryImplementationPostfix="Impl")
+@EnableMongoRepositories(basePackages = "org.csspec.IdentityService", repositoryImplementationPostfix = "Impl")
 public class MongoConfig extends AbstractMongoConfiguration {
     @Override
     protected String getDatabaseName() {
         return "IdentityDB";
     }
+
     @Override
     public Mongo mongo() throws Exception {
         return new MongoClient();

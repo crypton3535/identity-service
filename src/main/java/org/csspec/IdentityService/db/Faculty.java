@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Faculty {
 
     @JsonProperty("userId")
-     private String userID;
+    private String userID;
 
     @JsonProperty("facultyId")
     private String facultyId;
@@ -14,9 +14,12 @@ public class Faculty {
     private int departmentId;
 
     @JsonProperty("areaOfResearch")
-   private String areaOfResearch;
+    private String areaOfResearch;
 
-    public Faculty() {};
+    public Faculty() {
+    }
+
+    ;
 
     public String getUserID() {
         return userID;

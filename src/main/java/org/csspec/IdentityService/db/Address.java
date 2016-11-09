@@ -13,7 +13,8 @@ public class Address {
     @JsonProperty("postalAddress")
     private String postalAddress;
 
-    Address() {}
+    Address() {
+    }
 
     public void setPermanentAddress(String permanentAddress) {
         this.permanentAddress = permanentAddress;

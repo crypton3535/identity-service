@@ -25,9 +25,11 @@ public class User {
         return contact;
     }
 
-    public static enum userType{
-        TEACHER , STUDENT
-    };
+    public static enum userType {
+        TEACHER, STUDENT
+    }
+
+    ;
 
     @Id
     @JsonIgnore
@@ -63,10 +65,15 @@ public class User {
         this.contact = contact;
     }
 
-    public User() {};
-    public String toString() {
-        return "[ Userid : "+userId+", Username : "+userName + ", Email : "+email+", Isstudent : "+isStudent+" ] ";
+    public User() {
     }
+
+    ;
+
+    public String toString() {
+        return "[ Userid : " + userId + ", Username : " + userName + ", Email : " + email + ", Isstudent : " + isStudent + " ] ";
+    }
+
     public void setUserName(String userName) {
         this.userName = userName;
     }

@@ -13,7 +13,10 @@ public class SingleGrade {
     @JsonProperty("gradeScored")
     private int gradeScored;
 
-    public SingleGrade() {};
+    public SingleGrade() {
+    }
+
+    ;
 
     public String getCourseId() {
         return courseId;

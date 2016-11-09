@@ -22,7 +22,7 @@ public class DepartmentController {
 
     @RequestMapping(value = "/departments", method = RequestMethod.POST)
     public ResponseEntity<?> storeOneDepartment(@RequestBody Department department) {
-        if(department.getDepartmentId() == null || department.getHODUserId()==null || department.getDepartmentName()==null){
+        if (department.getDepartmentId() == null || department.getHODUserId() == null || department.getDepartmentName() == null) {
             return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
         }
         departmentRepository.save(department);
