@@ -13,4 +13,5 @@ public interface UserOperations {
     Pair<User,Faculty> findSpecificFaculty(String userId);
     String[] findStudentsOfCourse(String courseId);
     ResponseEntity<?> findSpecificTeacherSpecial(String userId, String courseId);
+
    }

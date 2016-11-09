@@ -36,7 +36,7 @@ public class RequestValidator {
         return template.postForObject(RequestValidator.uri, null, Account.class);
     }
 
-    public static boolean checkHeader(HttpServletRequest request,String... args) {
+    public static Account checkHeader(HttpServletRequest request,String... args) {
       /*  Cookie[] cookies = request.getCookies();
         if (cookies == null)
             return null;
@@ -65,9 +65,13 @@ public class RequestValidator {
         if(header.startsWith("Bearer")) {
             System.out.println(header.substring(7, header.length()));
             Account account =  validateRequest(header.substring(7,header.length()));
-            return role.contains(account.getRole());
+            if(role.contains(account.getRole())) {
+                return account;
+            } else {
+                return new Account();
+            }
         }
-        return false;
+        return new Account();
     }
 
 }
